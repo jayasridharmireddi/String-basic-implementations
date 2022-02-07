@@ -1,0 +1,54 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+		byte[] b_arr = {71, 101, 101, 107, 115};
+        String s_byte =new String(b_arr);
+        System.out.println(s_byte);
+        Scanner sc= new Scanner(System.in);
+        String a= sc.nextLine();
+        //calc ascii value of s
+        int n=a.length();
+        int sum=0;
+        for(int i=0;i<n;i++){
+            sum+=a.charAt(i);
+        }
+        System.out.println(sum);
+        System.out.println(palindrome(a));
+        count_vow_cons_spaces(a);
+	}
+	static boolean palindrome(String s){
+	    int n= s.length()-1;
+	    int i=0;
+	    while(i<n){
+	        if(s.charAt(i)==s.charAt(n)){
+	            i++;
+	            n--;
+	            continue;
+	        }     
+	        else
+	          return false;
+	        
+	    }
+	    return true;
+	}
+	static void count_vow_cons_spaces(String s){
+	    int n=s.length();
+	    int vow=0,con=0,spaces=0;
+	    for(int i=0;i<n;i++){
+	        if(s.charAt(i)=='a'||'e'||'i'||'o'||'u'){
+	            vow++;
+	        }
+	        else if(s.charAt(i)>'a' && s.charAt(i)<='z'){
+	            con++;
+	        }
+	        else if(s.charAt(i)==' '){
+	            spaces++;
+	        }
+	    }
+	    System.out.println(vow);
+	    System.out.println(con);
+	    System.out.println(spaces);
+	}
+}
