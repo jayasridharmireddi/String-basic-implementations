@@ -1,0 +1,10 @@
+    char c = 'e';
+    int ascii = c;
+    System.out.println("The ASCII value of " + c + " is: " + ascii);
+    
+    
+    
+    OR  if asked to find ascii value of a given character in a string
+        String s= new String("NEW year")
+    --  traverse from i=0 to len of string 
+           int val= s.charAt(i);
