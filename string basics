@@ -1,0 +1,28 @@
+See GFG 3 page notes on strings---
+
+
+See strings,string buffer,string builders
+
+
+
+Also various methods like-
+
+
+        - .length()
+        - .charAt()
+        - .substring(,)
+        - .indexOf()
+        uppercase,lower case etc
+        -  .concat()
+        - .delete()
+        -  .append()
+        -  .insert(index,".....")
+        
+        
+        
+Then see take u forwards basic string questions- 
+    link-      https://takeuforward.org/interviews/tcs-nqt-coding-sheet-tcs-coding-questions/#point_6
+     
+     
+     
+Then solve Edyst questions and sde sheet questions.     
