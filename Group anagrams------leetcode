@@ -21,4 +21,25 @@ Output: [["a"]]
 
 ANSWER
 
+1) create a hashmap of keys(the sorted string) and values as the anagrams we find(list of strings)
+2) run a for loop- for all the strings in the given string array
+3) convert every string to char array and sort the array and convert back to string
+4) now, for evry sorted strinf=g--- see if there exists simmilar strings will same values when sorted and add them to the hash map
 
+class Solution {
+    public List<List<String>> groupAnagrams(String[] strs) {
+        Map<String,List<String>>map= new HashMap<>();
+        for(int i=0;i<strs.length;i++){
+            char[] arr= strs[i].toCharArray();
+            Arrays.sort(arr);
+            String s= new String(arr);
+            if(map.containsKey(s))
+                map.get(s).add(strs[i]);
+            else{
+                map.put(s,new ArrayList<String>());
+                map.get(s).add(strs[i]);
+            }
+        }
+        return new ArrayList<>(map.values());
+    }
+}
