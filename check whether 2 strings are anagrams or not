@@ -1,0 +1,65 @@
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.
+
+ 
+
+Example 1:
+
+Input: s = "anagram", t = "nagaram"
+Output: true
+Example 2:
+
+Input: s = "rat", t = "car"
+Output: false
+
+
+
+Answer----------------------------------
+
+method1-   using sorting and comparing O(nlogn)
+class Solution {
+    public boolean isAnagram(String s, String t) {
+        char[] s1= s.toCharArray();
+        char[] t1= t.toCharArray();
+        if(s1.length!=t1.length)
+            return false;
+        
+        Arrays.sort(s1);
+        Arrays.sort(t1);
+        for(int i=0;i<s1.length;i++){
+            if(s1[i]!=t1[i])
+                return false;
+        }    /// O(nlogn) TC
+        
+        return true; 
+    }
+}
+
+
+method2----------------using hashmap O(n)
+public boolean isAnagram(String s, String t) {
+        char[] s1= s.toCharArray();
+        char[] t1= t.toCharArray();
+        if(s1.length!=t1.length)
+            return false;
+        HashMap<Character,Integer> map= new HashMap<Character,Integer>();
+        for(int i=0;i<s1.length;i++){
+            if(map.containsKey(s1[i]))
+                map.put(s1[i],map.get(s1[i])+1);
+            else{
+                map.put(s1[i],1);
+            }
+        }
+        for(int i=0;i<s1.length;i++){
+            if(map.containsKey(t1[i]))
+                map.put(t1[i],map.get(t1[i])-1);
+        }
+        Set<Character> set=map.keySet();
+        for(Character a:set){
+            if(map.get(a)!=0)
+                return false;        //O(N) TC
+        }
+        return true;
+}        
+        
