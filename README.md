@@ -1,1 +1,1 @@
-# String-basic-implementations
+# String-basic-implementations and seq q.s
